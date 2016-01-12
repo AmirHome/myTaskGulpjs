@@ -1,26 +1,19 @@
-var uglify = require('gulp-uglify');
-var gulpIf = require('gulp-if');
-var cssnano = require('gulp-cssnano');
-var del = require('del');
-
-
 var gulp = require('gulp'),
     useref = require('gulp-useref'),
     gulpIf = require('gulp-if'),
     uglify = require('gulp-uglify'),
     cssnano = require('gulp-cssnano'),
     del = require('del'),
-    // 
-    autoprefixer = require('gulp-autoprefixer'),
-    rename = require('gulp-rename'),
-    gutil = require('gulp-util'),
-    jshint = require('gulp-jshint'),
-    browserify = require('gulp-browserify'),
-    concat = require('gulp-concat'),
-    clean = require('gulp-clean'),
-    notify = require('gulp-notify');
- 
-
+    livereload = require('gulp-livereload'),
+    clean = require('gulp-clean')
+    // jshint = require('gulp-jshint'),
+    // autoprefixer = require('gulp-autoprefixer'),
+    // rename = require('gulp-rename'),
+    // gutil = require('gulp-util'),
+    // browserify = require('gulp-browserify'),
+    // concat = require('gulp-concat'),
+    // notify = require('gulp-notify')
+    ;
 
 // Paths variables
 var paths = {  
@@ -67,8 +60,8 @@ gulp.task('copy', function() {
 
 gulp.task('clean', function() {
   return del.sync(['gulpBuild/resources/**',
-                    // '!gulpBuild/resources/assets/',
-                    // '!gulpBuild/resources/views/',
+                    '!gulpBuild/resources/assets/',
+                    '!gulpBuild/resources/views/',
                     ]);
   // del([ 'gulpBuild/resources/assets/css',
   //               'gulpBuild/resources/assets/js',
@@ -79,7 +72,29 @@ gulp.task('clean', function() {
 
 // Default task
 gulp.task('default', ['clean'], function() {
-// gulp.task('default', function() {
-  // gulp.start('styles', 'scripts', 'images');
   gulp.start('useref', 'copy');
+});
+
+// Watch
+gulp.task('watch', function() {
+
+  var livereloadPage = function () {
+    // Reload the whole page
+    livereload.reload();
+  };
+
+  // Watch .blade lang files
+  gulp.watch(paths.assets.html, livereloadPage);
+  gulp.watch('app/helpers.php', livereloadPage);
+  gulp.watch('resources/lang/**/*.php', livereloadPage);
+
+  // Watch .scss files
+  gulp.watch(paths.assets.css, ['useref']);
+
+  // Create LiveReload server
+  livereload.listen();
+
+  // Watch any files in dist/, reload on change
+  gulp.watch([paths.dist]).on('change', livereload.changed);
+
 });
