@@ -1,3 +1,6 @@
+/*
+npm install gulp gulp-useref gulp-if gulp-uglify gulp-cssnano del gulp-livereload gulp-clean --save-dev
+*/
 var gulp = require('gulp'),
     useref = require('gulp-useref'),
     gulpIf = require('gulp-if'),
@@ -6,27 +9,20 @@ var gulp = require('gulp'),
     del = require('del'),
     livereload = require('gulp-livereload'),
     clean = require('gulp-clean')
-    // jshint = require('gulp-jshint'),
-    // autoprefixer = require('gulp-autoprefixer'),
-    // rename = require('gulp-rename'),
-    // gutil = require('gulp-util'),
-    // browserify = require('gulp-browserify'),
-    // concat = require('gulp-concat'),
-    // notify = require('gulp-notify')
     ;
 
 // Paths variables
 var paths = {  
     'dev': {
-        'css': 'gulpBuild/assets/css',
-        'js': 'gulpBuild/assets/js',
+        'css': 'gulpBuild/resources/assets/css',
+        'js': 'gulpBuild/resources/assets/js',
         'font': 'gulpBuild/resources/assets/fonts',
         'html':'gulpBuild/resources/views',
         'vendor': 'laravel/public/dev/vendor',
     },
     'assets': {
-        'css': 'assets/css',
-        'js': 'assets/js',
+        'css': 'resources/assets/css',
+        'js': 'resources/assets/js',
         'font': 'resources/assets/fonts/**/*',
         'html':'resources/views/**/*.php',
         'vendor': 'ssets/bower_vendor'
@@ -35,7 +31,7 @@ var paths = {
 };
 
 gulp.task('hello', function() {
-  console.log(paths.dev.html);
+  console.log(paths.dev.js+'/*.js');
 });
 
 gulp.task('useref', function(){
@@ -88,13 +84,15 @@ gulp.task('watch', function() {
   gulp.watch('app/helpers.php', livereloadPage);
   gulp.watch('resources/lang/**/*.php', livereloadPage);
 
-  // Watch .scss files
-  gulp.watch(paths.assets.css, ['useref']);
+  // gulp.watch( paths.assets.css+'/*.css', 'useref');
+  gulp.watch( 'resources/assets/css/*.css'  , [useref]);
+  gulp.watch( 'resources/assets/js/*.js'  , [useref]);
 
   // Create LiveReload server
   livereload.listen();
 
   // Watch any files in dist/, reload on change
-  gulp.watch([paths.dist]).on('change', livereload.changed);
+  gulp.watch(['resources/assets/**']).on('change', livereload.changed);
+  // Watch .css , .js files
 
 });

@@ -1,5 +1,9 @@
 /* CSS Document */
 
+body {
+    background-color: black;
+}
+
 .active-select {
     background: #fff !important;
     border-left: 5px solid #fd8204 !important;

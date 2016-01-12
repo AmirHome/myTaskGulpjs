@@ -1,36 +1,10 @@
 {
-  "name": "test",
+  "name": "testgulp",
   "version": "1.0.0",
-  "description": "myTaskGulpjs",
+  "description": "test gulp tasks",
   "main": "gulpfile.js",
-  "dependencies": {
-    "connect-livereload": "^0.5.4",
-    "browserify": "^12.0.2",
-    "gulp": "^3.9.0",
-    "del": "^2.2.0",
-    "gulp-autoprefixer": "^3.1.0",
-    "express": "^4.13.3",
-    "gulp-browserify": "^0.5.1",
-    "gulp-clean": "^0.3.1",
-    "gulp-concat": "^2.6.0",
-    "gulp-cssnano": "^2.1.0",
-    "gulp-livereload": "^3.8.1",
-    "gulp-embedlr": "^0.5.2",
-    "gulp-if": "^2.0.0",
-    "gulp-jshint": "^2.0.0",
-    "gulp-notify": "^2.2.0",
-    "gulp-minify-css": "^1.2.3",
-    "gulp-purifycss": "^0.2.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^1.5.1",
-    "gulp-util": "^3.0.7",
-    "gulp-useref": "^3.0.4",
-    "jshint": "^2.8.0",
-    "tiny-lr": "^0.2.1"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "for any laravel projects"
+    "test": "test gulp task for laravel projects"
   },
   "repository": {
     "type": "git",
@@ -38,7 +12,7 @@
   },
   "keywords": [
     "laravel",
-    "gulpjs",
+    "gulp",
     "task"
   ],
   "author": "Amir Hosseinzadeh",
@@ -46,5 +20,15 @@
   "bugs": {
     "url": "https://github.com/AmirHome/myTaskGulpjs/issues"
   },
-  "homepage": "https://github.com/AmirHome/myTaskGulpjs#readme"
+  "homepage": "https://github.com/AmirHome/myTaskGulpjs#readme",
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-cssnano": "^2.1.0",
+    "gulp-if": "^2.0.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-uglify": "^1.5.1",
+    "gulp-useref": "^3.0.4"
+  }
 }

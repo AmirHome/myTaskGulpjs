@@ -18,7 +18,7 @@ First, we'll create a folder called project to server as our project root as we 
 
 Once the package.json file is created, we can install Gulp into the project by using the following command:
 
-	$ npm install gulp --save-dev
+	$ npm install gulp gulp-useref gulp-if gulp-uglify gulp-cssnano del gulp-livereload gulp-clean --save-dev
 
 My experience is that with windows is you need to do "npm install --no-bin-links" according to Laravel
 
