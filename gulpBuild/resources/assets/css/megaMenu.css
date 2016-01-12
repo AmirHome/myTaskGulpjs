@@ -1,0 +1,101 @@
+#menu {list-style:none;height: 100%;}
+#menu li {float:left;display:block;text-align:center;position:relative;border:none;}
+#menu li:hover {background: #fd8204;}
+#menu li a {font-family: 'Lato', sans-serif;font-size:16px;color: #231f20;display:block;outline:0;text-decoration:none; line-height: 80px;padding: 2px 18px;height: 100%;font-weight: 400;}
+#menu li:hover a {color:#fff;}
+#menu li .drop {}
+#menu li:hover .drop {background:url("../images/drop.png") no-repeat 99% 38px;}
+
+#menu.stickyMenu {list-style:none;height: 100%;}
+#menu.stickyMenu li {float:left;display:block;text-align:center;position:relative;border:none;}
+#menu.stickyMenu li:hover {background: #fd8204;}
+#menu.stickyMenu li a {font-family: 'Lato', sans-serif;font-size:16px;color: #231f20;display:block;outline:0;text-decoration:none; line-height: 68px;padding: 0 18px;height: 100%;font-weight: 400;}
+#menu.stickyMenu li:hover a {color:#fff;}
+#menu.stickyMenu li:hover .drop {background:url("../images/drop.png") no-repeat 99% 30px;}
+
+
+.dropdown_1column,.dropdown_2column {margin:0 auto;float:left;position:absolute;left:-999em;text-align:left;padding:0;border-top:none;z-index: 9999;background:#fff;}
+.dropdown_4columns,.dropdown_5columns  {margin:0 auto;float:left;position:absolute;left:-999em;text-align:left;padding:10px 0;border-top:none;z-index: 9999;background:#fff;}
+
+.dropdown_1column {width: 151px;border-top: 2px solid #fd8204;}
+.dropdown_2column {width: 239px;border-top: 2px solid #fd8204;}
+.dropdown_4columns {width: 1100px;height: 446px;border-top: 2px solid #fd8204;box-shadow: 0 1px 5px rgba(0,0,0, 0.3);-webkit-box-shadow: 0 1px 5px rgba(0,0,0, 0.3);-moz-box-shadow: 0 1px 5px rgba(0,0,0, 0.3);}
+.dropdown_5columns {width: 1100px;height: 290px;border-top: 2px solid #fd8204;box-shadow: 0 1px 5px rgba(0,0,0, 0.3);-webkit-box-shadow: 0 1px 5px rgba(0,0,0, 0.3);-moz-box-shadow: 0 1px 5px rgba(0,0,0, 0.3);}
+
+#menu li:hover .dropdown_1column, #menu li:hover .dropdown_2column {left:0;top:auto;}
+#menu li:hover .dropdown_4columns {left:-478px;top:auto;}
+#menu li:hover .dropdown_5columns {left:-599px;top:auto;}
+.alt_baslik {font-size: 17px;color: #fd8204;font-weight: 600;padding: 15px 0 5px 0;}
+.anabaslik {font-size:20px;font-weight:700;letter-spacing:-1px;margin:10px 0 15px 0;padding-bottom:14px;color:#fd8204;padding: 0 0 0 10px;}
+
+.col_1 {padding: 0 13px;border-right: 2px solid #f0f0f0;width:192px;display:inline;float: left;position: relative;height: 370px;}
+.col_2 {width:200px;display:inline;float: left;position: relative;}
+.col_3 {width:260px;display:inline;float: left;position: relative;}
+.col_4 {padding: 0 13px;border-right: 2px solid #f0f0f0;width:338.5px;display:inline;float: left;position: relative;height: 240px;}
+
+#menu li ul {list-style:none;padding:0;margin:0 0 12px 0;}
+#menu li ul.alt li {background: url(../images/menuicIcon.png) 0 12px no-repeat;}
+#menu li ul.alt li a {font-size:15px;position:relative;text-align:left;color: #231f20;font-weight: 400;height: 28px; line-height: 28px;letter-spacing: -0.3px;left: -8px; width: 190px;}
+#menu li ul.alt li a:hover {color: #fd8204;}
+
+
+#menu li ul.alt2 li {background: url(../images/menuicIcon.png) 0 12px no-repeat;}
+#menu li ul.alt2 li a {font-size:15px;position:relative;text-align:left;color: #231f20;font-weight: 400;height: 28px; line-height: 28px;letter-spacing: -0.3px;left: -8px; width: 190px;}
+#menu li ul.alt2 li a:hover {color: #fd8204;}
+#menu li ul.alt2 li ul.desc li{background:none;font-size: 15px;text-align: left;}
+#menu li ul.alt2 li ul.desc li a {font-size:15px;position:none;text-align:left;color: #231f20;font-weight: 400;height: 100%; line-height: 17px;letter-spacing: 1; width: 100%;}
+#menu li ul.alt2 li ul.desc li a:hover {color: #fd8204;}
+
+#menu.stickyMenu li ul.alt2 li {background: url(../images/menuicIcon.png) 0 12px no-repeat;}
+#menu.stickyMenu li ul.alt2 li a {font-size:16px;position:relative;text-align:left;color: #231f20;font-weight: 700;height: 28px; line-height: 28px;letter-spacing: -0.3px;left: -8px; width: 190px;}
+#menu.stickyMenu li ul.alt2 li a:hover {color: #fd8204;}
+#menu.stickyMenu li ul.alt2 li ul.desc li{background:none;font-size: 15px;text-align: left;}
+#menu.stickyMenu li ul.alt2 li ul.desc li a {font-size:15px;position:none;text-align:left;color: #231f20;font-weight: 400;height: 100%; line-height: 17px;letter-spacing: 1; width: 100%;}
+#menu.stickyMenu li ul.alt2 li ul.desc li a:hover {color: #fd8204;}
+
+#menu.stickyMenu li ul {list-style:none;padding:0;margin:0 0 12px 0;}
+#menu.stickyMenu li ul.alt li {background: url(../images/menuicIcon.png) 0 10px no-repeat;}
+#menu.stickyMenu li ul.alt li a {font-size:15px;position:relative;text-align:left;color: #231f20;font-weight: 400;height: 28px; line-height: 28px;letter-spacing: -0.3px;left: -8px; width: 190px;}
+#menu.stickyMenu li ul.alt li a:hover {color: #fd8204;}
+
+
+#menu li ul.simple li a {font-size:16px;text-align:left;color: #231f20;font-weight:400;height:45px;line-height: 45px;letter-spacing: -0.3px;border-bottom: 1px solid #eaeaea;width:115px;}
+#menu li ul.simple li a:hover {color: #fff; background: #fd8204;}
+#menu.stickyMenu li ul.simple li a {font-size:16px;text-align:left;color: #231f20;font-weight:400;height:45px;line-height: 45px;letter-spacing: -0.3px;border-bottom: 1px solid #eaeaea;width:115px;}
+#menu.stickyMenu li ul.simple li a:hover {color: #fff; background: #fd8204;}
+
+#menu li ul.simple2 li a {font-size:16px;text-align:left;color: #231f20;font-weight:400;height:45px;line-height: 45px;letter-spacing: -0.3px;border-bottom: 1px solid #eaeaea; width:203px;}
+#menu li ul.simple2 li a:hover {color: #fff; background: #fd8204;}
+#menu.stickyMenu li ul.simple2 li a {font-size:16px;text-align:left;color: #231f20;font-weight:400;height:45px;line-height: 45px;letter-spacing: -0.3px;border-bottom: 1px solid #eaeaea; width:203px;}
+#menu.stickyMenu li ul.simple2 li a:hover {color: #fff; background: #fd8204;}
+
+
+#menu li ul.alt li ul.alt2 li{background: url(../images/menuicIcon.png) 10px 10px no-repeat;}
+#menu li ul.alt li ul.alt2 li a {padding: 0 0 0 30px;font-size:15px;position:relative;float:none;text-align:left;color: #231f20;font-weight: 400;height: 28px; line-height: 28px;letter-spacing: -0.3px;;left: -8px; width: 190px;}
+#menu li ul.alt li ul.alt2 li a:hover {color: #fd8204;}
+
+#menu.stickyMenu li ul.alt li ul.alt2 li{background: url(../images/menuicIcon.png) 10px 10px no-repeat;}
+#menu.stickyMenu li ul.alt li ul.alt2 li a {padding: 0 0 0 30px;font-size:15px;position:relative;float:none;text-align:left;color: #231f20;font-weight: 300;height: 28px; line-height: 28px;letter-spacing: -0.3px;;left: -8px; width: 190px;}
+#menu.stickyMenu li ul.alt li ul.alt2 li a:hover {color: #fd8204;}
+
+#menu li .greybox li {
+	background:#F4F4F4;
+	border:1px solid #bbbbbb;
+	margin:0px 0px 4px 0px;
+	padding:4px 6px 4px 6px;
+	width:116px;
+
+	/* Rounded Corners */
+ border-radius: 5px;
+}
+#menu li .greybox li:hover {
+	background:#ffffff;
+	border:1px solid #aaaaaa;
+	padding:4px 6px 4px 6px;
+	margin:0px 0px 4px 0px;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+.dropdown_2column {width: 242px;border-top: 2px solid #fd8204;}
+#menu li ul.simple2 li a {font-size:16px;text-align:left;color: #231f20;font-weight:400;height:45px;line-height: 45px;letter-spacing: -0.3px;border-bottom: 1px solid #eaeaea; width:206px;}
+#menu li:hover .dropdown_4columns {left:-473px;top:auto;}
+}
