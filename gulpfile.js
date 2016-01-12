@@ -1,7 +1,5 @@
-
-var purify = require('gulp-purifycss');
-
 var uglify = require('gulp-uglify');
+var gulpIf = require('gulp-if');
 
 var gulp = require('gulp'),
     useref = require('gulp-useref'),
@@ -42,20 +40,6 @@ gulp.task('hello', function() {
   console.log(paths.assets.html);
 });
 
-gulp.task('css', function() {
-  return gulp.src(paths.dev.css+'*.css')
-
-    .pipe(autoprefixer('last 2 version'))
-    .pipe(gulp.dest(paths.assets.css))
-
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(minifycss())
-    .pipe(gulp.dest(paths.assets.css))
-
-    .pipe(notify({ message: 'Styles task complete' }));
-});
-
-
 gulp.task('html', function () {
     return gulp.src(paths.dev.html+'*.html')
         .pipe(useref())
@@ -64,3 +48,10 @@ gulp.task('html', function () {
         .pipe(gulp.dest(paths.assets.html));
 });
 
+gulp.task('useref', function(){
+  return gulp.src('app/*.html')
+    .pipe(useref())
+    // Minifies only if it's a JavaScript file
+    .pipe(gulpIf('*.js', uglify()))
+    .pipe(gulp.dest('dist'))
+});
