@@ -46,4 +46,4 @@ We can now begin to write a gulp task with this gulp variable. The basic syntax 
 
 With npm do:
 
-	npm install gulp-cssnano --save-dev
+	$ npm install gulp-cssnano --save-dev
