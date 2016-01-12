@@ -27,39 +27,38 @@ var paths = {
     'dev': {
         'css': 'gulpBuild/assets/css',
         'js': 'gulpBuild/assets/js',
-        'font': 'gulpBuild/resources/fonts',
+        'font': 'gulpBuild/resources/assets/fonts',
         'html':'gulpBuild/resources/views',
         'vendor': 'laravel/public/dev/vendor',
-        'html':'dev/html/'
     },
     'assets': {
         'css': 'assets/css',
         'js': 'assets/js',
-        'font': 'resources/fonts/**/*',
-        'html':'resources/views',
+        'font': 'resources/assets/fonts/**/*',
+        'html':'resources/views/**/*.php',
         'vendor': 'ssets/bower_vendor'
     }
 
 };
 
 gulp.task('hello', function() {
-  console.log(paths.assets.html);
+  console.log(paths.dev.html);
 });
 
 gulp.task('useref', function(){
-  return gulp.src('resources/views/**/*.php')
+  return gulp.src(paths.assets.html)
     .pipe(useref())
     // Minifies only if it's a JavaScript file
     .pipe(gulpIf('*.js', uglify()))
     // Minifies only if it's a CSS file
     .pipe(gulpIf('*.css', cssnano()))
-    .pipe(gulp.dest('gulpBuild/resources/views'))
+    .pipe(gulp.dest(paths.dev.html))
 });
 
 gulp.task('copy', function() {
    // Copy fonts
- return gulp.src('resources/assets/fonts/**/*')
- .pipe(gulp.dest('gulpBuild/resources/assets/fonts'));
+ return gulp.src(paths.assets.font)
+ .pipe(gulp.dest(paths.dev.font));
 });
 
 // gulp.task('clean:dist', function() {
@@ -67,11 +66,15 @@ gulp.task('copy', function() {
 // })
 
 gulp.task('clean', function() {
-  return del([ 'gulpBuild/resources/assets/css',
-                'gulpBuild/resources/assets/js',
-                'gulpBuild/resources/assets/views',
-                'gulpBuild/resources/assets/fonts',
-             ]);
+  return del.sync(['gulpBuild/resources/**',
+                    // '!gulpBuild/resources/assets/',
+                    // '!gulpBuild/resources/views/',
+                    ]);
+  // del([ 'gulpBuild/resources/assets/css',
+  //               'gulpBuild/resources/assets/js',
+  //               'gulpBuild/resources/assets/views',
+  //               'gulpBuild/resources/assets/fonts',
+  //            ]);
 });
 
 // Default task
