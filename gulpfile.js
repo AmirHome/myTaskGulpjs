@@ -47,7 +47,7 @@ gulp.task('hello', function() {
 });
 
 gulp.task('useref', function(){
-  return gulp.src('resources/views/**/*.blade.php')
+  return gulp.src('resources/views/**/*.php')
     .pipe(useref())
     // Minifies only if it's a JavaScript file
     .pipe(gulpIf('*.js', uglify()))
