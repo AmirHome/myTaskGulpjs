@@ -1,55 +1,17 @@
-@extends('layouts.master')
-@section('page_title', $last_news->title)
-
-@section('parials_head')
-
-@endsection
-
-
-@section('sidebars')
-<div class="banner1">
-    <div class="container">
-        <div class="orangebg">
-            <div class="orangebg-arrow"><img src="{{ asset('resources/assets/images')}}/orangebg-arrow.png" alt="" /></div>
-            <div class="bannerBaslik">
-            {{$last_news->title}}
-            </div>
-            <!-- <div class="breadcrumbs"><a href="index.php"><i class="fa fa-home"></i> Home Page</a> <span>/</span><a href="#">Products</a>/ Cables</div> -->
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="categories-page-left">
-            <!-- <div class="categories-page-arrow"><img src="images/graybg-arrow.png" alt="" /></div> -->
-            <div class="categories-title">News List</div>
-            <ul class="categories-menu">
-                <li ><!-- <a href="#">News List</a> -->
-                    <ul>
-                    @foreach ($news as $news_value)
-                        <li {{ ( $last_news->id == $news_value->id ) ? 'class=active-select' : ''}} ><a href="{{ URL::to('news/' .$news_value->id)}}" class="anchorLink">{{ str_limit($news_value->title, 23)}}</a></li>
-                    @endforeach
-                    </ul>
-                </li>
-            </ul>
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="UTF-8">
+        <title>Animated Bubbles</title>
+        <link rel="stylesheet" href="../assets/css/combined.css">
         
-    </div>
-</div>
-@endsection
-
-@section('content')
-
-<div class="container">
-    
-
-        <div class="categories-page-right">
-            <div class="categories-right-text">
-            <span>{{$last_news->title}}</span>
-            <div class="leds-img"><img src="{{ asset("uploads") }}/{{$last_news->image}}" alt="{{ $last_news->title }}" /></div>
-            {!! $last_news->text !!}
-            </div>
-        </div>
-        <div class="clear"></div>
-    
-</div>
-@endsection
+    </head>
+    <body>
+        Copyright (c) 2016 by Ben Hodgson (http://codepen.io/bh/pen/JBlCc)
+        Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+        The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+        
+        <script src="../assets/js/main.min.js"></script>
+    </body>
+</html>

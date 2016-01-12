@@ -21,9 +21,10 @@ var gulp = require('gulp'),
 // Paths variables
 var paths = {  
     'dev': {
-        'css': './dev/css/',
+        'css': './gulpBuild/assets/css/',
+        'js': './gulpBuild/assets/js/',
+        'html':'./gulpBuild/resources/views/',
         'scss': './laravel/public/dev/scss/',
-        'js': './laravel/public/dev/js/',
         'vendor': './laravel/public/dev/vendor/',
         'html':'./dev/html/'
     },
@@ -31,7 +32,7 @@ var paths = {
         'css': './assets/css/',
         'js': './assets/js/',
         'vendor': '/assets/bower_vendor/',
-        'html':'./test/'
+        'html':'./resources/views/'
     }
 
 };
@@ -49,9 +50,9 @@ gulp.task('html', function () {
 });
 
 gulp.task('useref', function(){
-  return gulp.src('app/*.html')
+  return gulp.src('./resources/views/*.blade.php')
     .pipe(useref())
     // Minifies only if it's a JavaScript file
     .pipe(gulpIf('*.js', uglify()))
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('./gulpBuild/resources/views/'))
 });
