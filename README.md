@@ -8,3 +8,10 @@ When you're done with installing Node, you can install Gulp by using the followi
 
 -----
 	$ sudo npm install gulp -g
+
+# Creating a Gulp Project
+
+First, we'll create a folder called project to server as our project root as we move through this tutorial. Run the npm init command from inside that directory:
+
+	... from within our project folder
+	$ npm init
