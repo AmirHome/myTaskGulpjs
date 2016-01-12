@@ -47,13 +47,13 @@ gulp.task('hello', function() {
 });
 
 gulp.task('useref', function(){
-  return gulp.src('./resources/views/*.blade.php')
+  return gulp.src('resources/views/**/*.blade.php')
     .pipe(useref())
     // Minifies only if it's a JavaScript file
     .pipe(gulpIf('*.js', uglify()))
     // Minifies only if it's a CSS file
     .pipe(gulpIf('*.css', cssnano()))
-    .pipe(gulp.dest('./gulpBuild/resources/views'))
+    .pipe(gulp.dest('gulpBuild/resources/views'))
 });
 
 gulp.task('copy', function() {
