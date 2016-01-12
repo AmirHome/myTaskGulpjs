@@ -40,3 +40,10 @@ We can now begin to write a gulp task with this gulp variable. The basic syntax 
 	    .pipe(aGulpPlugin()) // Sends it through a gulp plugin
 	    .pipe(gulp.dest('destination')) // Outputs the file in the destination folder
 	})
+
+-----
+# Install Package Sample
+
+With npm do:
+
+	npm install gulp-cssnano --save-dev
