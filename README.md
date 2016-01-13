@@ -20,9 +20,13 @@ Once the package.json file is created, we can install Gulp into the project by u
 
 	$ npm install gulp gulp-useref gulp-if gulp-uglify gulp-cssnano del gulp-livereload gulp-clean --save-dev
 
-My experience is that with windows is you need to do "npm install --no-bin-links" according to Laravel
+* My experience is that with windows is you need to do "npm install --no-bin-links" according to Laravel
 
 	$ npm install --no-bin-links
+
+* Remove node_modules     
+	npm install rimraf -g
+	rimraf node_modules
 
 -----
 # Writing Your First Gulp Task
@@ -47,3 +51,7 @@ We can now begin to write a gulp task with this gulp variable. The basic syntax 
 With npm do:
 
 	$ npm install gulp-cssnano --save-dev
+
+	<!-- build:css ../assets/css/combined.css -->
+
+	<!-- endbuild -->
