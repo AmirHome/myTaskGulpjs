@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <title>Animated Bubbles</title>
         <!-- build:css ../assets/css/combined.css -->
-        <link rel="stylesheet" href="../assets/css/1.css">
-        <link rel="stylesheet" href="../assets/css/2.css">
+        <link rel="stylesheet" href="{{ asset("../assets/css") }}/1.css">
+        <link rel="stylesheet" href="{{ asset("../assets/css") }}/2.css">
         <!-- endbuild -->
     </head>
     <body>
