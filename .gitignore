@@ -1,4 +1,5 @@
 vendor
+/gulpBuild
 /node_modules
 /gulpBuild
 Homestead.yaml
