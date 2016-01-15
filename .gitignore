@@ -1,5 +1,6 @@
 vendor
 /node_modules
+/gulpBuild
 Homestead.yaml
 Homestead.json
 /bootstrap/compiled.php
