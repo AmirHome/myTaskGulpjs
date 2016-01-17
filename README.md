@@ -18,18 +18,21 @@ First, we'll create a folder called project to server as our project root as we 
 
 Once the package.json file is created, we can install Gulp into the project by using the following command:
 
-npm install gulp gulp-useref gulp-if gulp-uglify gulp-cssnano del gulp-livereload gulp-clean gulp-replace gulp-htmlmin --save-dev
+    $ npm install gulp gulp-useref gulp-if gulp-uglify gulp-cssnano del gulp-livereload gulp-clean gulp-replace gulp-htmlmin --save-dev
 
 * My experience is that with windows is you need to do "npm install --no-bin-links" according to Laravel
 
 	$ npm install --no-bin-links
 
 * Uninstall models
+
 	$ npm uninstall gulp-sample --save-dev
 
-* Remove node_modules     
+* Remove node_modules
+
 	$ npm install rimraf -g
 	$ rimraf node_modules
+
 -----
 # Writing Your First Gulp Task
 
