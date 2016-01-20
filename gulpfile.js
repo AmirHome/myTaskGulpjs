@@ -27,7 +27,8 @@ var paths = {
         'js': 'resources/assets/js',
         'font': 'resources/assets/fonts/**/*',
         'view':'resources/views/**/*.php',
-        'local': 'D:/xampp/htdocs/signal/gulpBuild/resources'
+        'local': 'D:/xampp/htdocs/signal/gulpBuild/resources',
+        'fnc_path':"{{ asset('resources/assets') }}",
     }
 
 };
@@ -38,8 +39,7 @@ gulp.task('hello', function() {
 
 gulp.task('useref', function(){
   return gulp.src(paths.assets.view)
-    .pipe(replace("{{ asset('resources/assets') }}", 'resources/assets'))
-    // .pipe(replace(/foo(.{3})/g, '$1foo'))
+    .pipe(replace(paths.assets.fnc_path, 'resources/assets'))
     .pipe(useref())
     // Minifies only if it's a JavaScript file
     .pipe(gulpIf('*.js', uglify()))
@@ -48,7 +48,7 @@ gulp.task('useref', function(){
     
     .pipe(gulp.dest(paths.dev.view))
 
-    .pipe(replace('../assets', "{{ asset('resources/assets') }}"))
+    .pipe(replace('../assets', paths.assets.fnc_path))
     .pipe(gulp.dest(paths.dev.view))
 });
 
@@ -107,3 +107,4 @@ gulp.task('watch', function() {
   // Watch .css , .js files
 
 });
+
