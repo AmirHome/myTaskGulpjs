@@ -67,7 +67,7 @@ gulp.task('copy',['clean'], function() {
  return gulp.src(['./**','!./node_modules/**','!./node_modules'
                         ,'!./.git/**','!./.git'
                         ,'!./.storage/**/*'
-                ])
+                ],{dot: true})
  .pipe(gulp.dest('../concept7.min'));
 });
 
