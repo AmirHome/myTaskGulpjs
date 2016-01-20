@@ -62,25 +62,23 @@ gulp.task('htmlmin',['useref'], function() {
 });
 
 
-gulp.task('copy', function() {
+gulp.task('copy',['clean'], function() {
    // Copy fonts
- return gulp.src(paths.assets.font)
- .pipe(gulp.dest(paths.dev.font));
-
-  // Copy go test gulp build
- // return gulp.src(paths.assets.local)
- // .pipe(gulp.dest(paths.assets.localgulp));
+ return gulp.src(['./**','!./node_modules/**','!./node_modules'
+                        ,'!./.git/**','!./.git'
+                        ,'!./.storage/**/*'
+                ])
+ .pipe(gulp.dest('../concept7.min'));
 });
 
 gulp.task('clean', function() {
-  return del.sync(['gulpBuild/resources/**',
-                    '!gulpBuild/resources/assets/',
-                    '!gulpBuild/resources/views/',
-                    ]);
+  return del.sync(['../concept7.min/resources/**',
+                    
+                    ], {force: true});
 });
 
 // Default task
-gulp.task('default', ['clean'], function() {
+gulp.task('default',  function() {
   gulp.start('useref','htmlmin');
 });
 
