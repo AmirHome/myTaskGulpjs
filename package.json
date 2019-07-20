@@ -1,36 +1,35 @@
 {
-  "name": "testgulp",
+  "name": "gulpjs",
   "version": "1.0.0",
-  "description": "test gulp tasks",
+  "description": "gulpjs project",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "test gulp task for laravel projects"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://AmirHome@github.com/AmirHome/myTaskGulpjs.git"
+    "url": "git+https://github.com/AmirHome/myTaskGulpjs.git"
   },
-  "keywords": [
-    "laravel",
-    "gulp",
-    "task"
-  ],
-  "author": "Amir Hosseinzadeh",
-  "license": "MIT",
+  "author": "amirhome.com",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/AmirHome/myTaskGulpjs/issues"
   },
   "homepage": "https://github.com/AmirHome/myTaskGulpjs#readme",
   "devDependencies": {
-    "del": "^2.2.0",
-    "gulp": "^3.9.0",
-    "gulp-clean": "^0.3.1",
-    "gulp-cssnano": "^2.1.0",
-    "gulp-htmlmin": "^1.3.0",
-    "gulp-if": "^2.0.0",
-    "gulp-livereload": "^3.8.1",
-    "gulp-replace": "^0.5.4",
-    "gulp-uglify": "^1.5.1",
-    "gulp-useref": "^3.0.4"
+    "del": "^5.0.0",
+    "fs": "0.0.1-security",
+    "gulp": "^3.9.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-git": "^2.9.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^3.0.0",
+    "gulp-livereload": "^4.0.1",
+    "gulp-replace": "^1.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-useref": "^3.1.6",
+    "run-sequence": "^2.2.1",
+    "vinyl-ftp": "^0.6.1",
+    "yargs": "^13.3.0"
   }
 }
